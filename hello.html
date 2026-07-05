@@ -1,1 +1,254 @@
-<h1>Hi!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rianna — Technology Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: #100B1A;
+  --bg-alt: #1A1327;
+  --card: #1F1730;
+  --accent: #B78CFF;
+  --accent-soft: #7C5CC4;
+  --text: #F4F0FB;
+  --text-muted: #9C90B3;
+  --line: #2E2440;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family:'Inter', sans-serif;
+  overflow-x:hidden;
+}
+a{ color:inherit; text-decoration:none; }
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:26px 32px;
+  background:linear-gradient(180deg, rgba(16,11,26,0.92), rgba(16,11,26,0.7));
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.logo{
+  font-family:'Unbounded', sans-serif;
+  font-weight:800; font-size:18px; letter-spacing:0.02em;
+}
+.logo span{ color:var(--accent); }
+.nav-links{ display:flex; gap:34px; font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; }
+.nav-links a{ position:relative; color:var(--text-muted); transition:color .25s; }
+.nav-links a::after{
+  content:''; position:absolute; left:0; bottom:-6px; width:0; height:1px; background:var(--accent);
+  transition:width .25s ease;
+}
+.nav-links a:hover{ color:var(--text); }
+.nav-links a:hover::after{ width:100%; }
+.nav-links a:focus-visible, a:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:88vh;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:60px 32px 100px;
+  position:relative;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+}
+.eyebrow::before{ content:'◆ '; }
+.hero-title{
+  font-family:'Unbounded', sans-serif;
+  font-weight:900;
+  line-height:0.95;
+  letter-spacing:-0.01em;
+}
+.line1{
+  display:block;
+  font-size: clamp(40px, 7vw, 88px);
+  color: var(--text-muted);
+  opacity:0.85;
+}
+.line2{
+  display:block;
+  font-size: clamp(70px, 13vw, 168px);
+  color: var(--text);
+  position:relative;
+  margin-top:-6px;
+}
+.line2::before{
+  content: attr(data-text);
+  position:absolute;
+  left:8px; top:8px;
+  z-index:-1;
+  background: repeating-linear-gradient(135deg, var(--accent) 0 7px, transparent 7px 14px);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  opacity:0.55;
+  pointer-events:none;
+}
+.ltr{
+  display:inline-block;
+  animation: floaty 3.6s ease-in-out infinite;
+  transition: transform .2s ease, color .2s ease;
+  will-change: transform;
+}
+.ltr:nth-child(2n){ animation-duration:4.1s; animation-delay:0.25s; }
+.ltr:nth-child(3n){ animation-duration:3.2s; animation-delay:0.55s; }
+.ltr:nth-child(3n+1){ animation-duration:4.5s; animation-delay:0.1s; }
+.ltr:hover{
+  animation-play-state: paused;
+  transform: translateY(-14px) rotate(-6deg) scale(1.08);
+  color: var(--accent);
+}
+@keyframes floaty{
+  0%,100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-6px) rotate(-1.4deg); }
+}
+.hero-sub{
+  margin-top:34px;
+  max-width:520px;
+  font-size:17px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.hero-sub strong{ color:var(--text); font-weight:600; }
+.hero-cta{ margin-top:38px; display:flex; align-items:center; gap:20px; }
+.btn-outline{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+  border:1.5px solid var(--accent);
+  color:var(--text);
+  padding:14px 28px;
+  border-radius:2px;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+  display:inline-block;
+}
+.btn-outline:hover{ background:var(--accent); color:#100B1A; transform:translateY(-2px); }
+
+.scroll-cue{
+  position:absolute; bottom:36px; left:32px;
+  font-family:'IBM Plex Mono', monospace; font-size:12px;
+  color:var(--text-muted); letter-spacing:0.08em;
+  display:flex; align-items:center; gap:10px;
+}
+.scroll-cue .bar{ width:1px; height:28px; background:var(--accent); animation:scrollpulse 1.8s ease-in-out infinite; }
+@keyframes scrollpulse{ 0%,100%{ opacity:0.2; } 50%{ opacity:1; } }
+
+/* ---------- STITCH DIVIDER ---------- */
+.stitch{
+  height:1px;
+  background-image: linear-gradient(90deg, var(--line) 60%, transparent 40%);
+  background-size: 14px 1px;
+  max-width:1180px; margin:0 auto;
+}
+
+/* ---------- SECTIONS (reveal) ---------- */
+section.block{ padding:110px 32px; }
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+.tag-label{
+  font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--accent); margin-bottom:16px; display:block;
+}
+
+/* ---------- CONTACT ---------- */
+.contact{ text-align:left; }
+.contact-title{ font-family:'Unbounded', sans-serif; font-weight:900; font-size:clamp(38px,7vw,80px); line-height:1; margin-bottom:24px; }
+.contact-title span{ color:var(--accent); }
+.email-link{
+  font-family:'IBM Plex Mono', monospace; font-size:18px;
+  border-bottom:1.5px solid var(--accent); padding-bottom:4px;
+  transition: color .25s;
+}
+.email-link:hover{ color:var(--accent); }
+.socials{ display:flex; gap:24px; margin-top:34px; font-family:'IBM Plex Mono', monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); }
+.socials a:hover{ color:var(--text); }
+
+footer{
+  padding:30px 32px; border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-muted);
+}
+
+@media (max-width:760px){
+  .nav-links{ gap:18px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
+}
+
+</style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="logo">RIANNA<span>.</span></div>
+    <nav class="nav-links">
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Technology Specialist — Hugo Boss, Germany</p>
+    <h1 class="hero-title">
+      <span class="line1">Hi, I'm</span>
+      <span class="line2" id="hero-name" data-text="Rianna"></span>
+    </h1>
+    <p class="hero-sub">I sit at the join between fashion and systems &mdash; keeping the tools, platforms and workflows behind the brand running <strong>fast, stable and a little more elegant</strong> than they were yesterday.</p>
+    <div class="hero-cta">
+      <a class="btn-outline" href="#contact">Get in touch</a>
+    </div>
+    <div class="scroll-cue"><span class="bar"></span> SCROLL</div>
+  </section>
+
+  <div class="stitch"></div>
+
+  <section id="contact" class="block reveal contact">
+    <span class="tag-label">Get in touch</span>
+    <h2 class="contact-title">Let's talk<span>.</span></h2>
+    <a class="email-link" href="mailto:rianna@example.com">rianna@example.com</a>
+    <div class="socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Rianna</span>
+    <span>Built with a little lilac.</span>
+  </footer>
+
+<script>
+// Split hero name into individually animated letters
+const nameEl = document.getElementById('hero-name');
+const nameText = nameEl.getAttribute('data-text');
+nameEl.innerHTML = nameText.split('').map(ch => `<span class="ltr">${ch}</span>`).join('');
+
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+</script>
+</body>
+</html>
