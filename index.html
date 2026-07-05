@@ -121,26 +121,6 @@ a{ color:inherit; text-decoration:none; }
 }
 .hero-sub strong{ color:var(--text); font-weight:600; }
 .hero-cta{ margin-top:38px; display:flex; align-items:center; gap:20px; }
-.btn-outline{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
-  border:1.5px solid var(--accent);
-  color:var(--text);
-  padding:14px 28px;
-  border-radius:2px;
-  transition: background .25s ease, color .25s ease, transform .25s ease;
-  display:inline-block;
-}
-.btn-outline:hover{ background:var(--accent); color:#100B1A; transform:translateY(-2px); }
-
-.scroll-cue{
-  position:absolute; bottom:36px; left:32px;
-  font-family:'IBM Plex Mono', monospace; font-size:12px;
-  color:var(--text-muted); letter-spacing:0.08em;
-  display:flex; align-items:center; gap:10px;
-}
-.scroll-cue .bar{ width:1px; height:28px; background:var(--accent); animation:scrollpulse 1.8s ease-in-out infinite; }
-@keyframes scrollpulse{ 0%,100%{ opacity:0.2; } 50%{ opacity:1; } }
 
 /* ---------- STITCH DIVIDER ---------- */
 .stitch{
@@ -205,12 +185,7 @@ footer{
       <span class="line2" id="hero-name" data-text="Rianna"></span>
     </h1>
     <p class="hero-sub">I'm a Technology Specialist <strong>curious about tech trends,</strong> currently working at the intersection of Fashion and Technology at HUGO BOSS</p>
-    <div class="hero-cta">
-      <a class="btn-outline" href="#contact">Get in touch</a>
-    </div>
-    <div class="scroll-cue"><span class="bar"></span> SCROLL</div>
-  </section>
-
+  
   <div class="stitch"></div>
 
   <section id="contact" class="block reveal contact">
@@ -225,7 +200,7 @@ footer{
 
   <footer>
     <span>© <span id="year"></span> Rianna</span>
-    <span>Built with a little Lilac.</span>
+    <span>Built with a little lilac.</span>
   </footer>
 
 <script>
