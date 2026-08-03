@@ -59,7 +59,8 @@ exports.handler = async function(event, context) {
                 model: "gpt-image-1",
                 prompt: prompt.trim(),
                 n: 1,
-                size: "1024x1024"
+                size: "1024x1024",
+                quality: "low"
             })
         });
 
