@@ -37,13 +37,13 @@ a{ color:inherit; text-decoration:none; }
 
 /* ---------- GENERATOR SECTION ---------- */
 .generator-section{
-  max-width:480px;
+  max-width:1180px;
   margin:0 auto;
-  padding:90px 32px 120px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
+  padding:70px 32px 120px;
+}
+.generator-header{
+  text-align:left;
+  margin-bottom:60px;
 }
 .tag-label{
   font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em;
@@ -55,7 +55,16 @@ a{ color:inherit; text-decoration:none; }
   margin-bottom:14px;
 }
 .generator-sub{
-  color:var(--text-muted); font-size:15px; line-height:1.6; margin-bottom:40px;
+  color:var(--text-muted); font-size:15px; line-height:1.6;
+}
+
+.generator-content{
+  max-width:480px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
 }
 
 .frame{
