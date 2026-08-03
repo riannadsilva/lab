@@ -42,17 +42,24 @@ document.getElementById('submit-btn').addEventListener("click", async () => {
             throw new Error(data.error.message || 'API returned an error');
         }
 
-        // Extract image URL
+        // Extract image data (GPT Image models return base64, not a URL)
+        const imageB64 = data?.data?.[0]?.b64_json;
         const imageUrl = data?.data?.[0]?.url;
 
-        if (imageUrl) {
+        if (imageB64) {
+            outputImg.innerHTML = `
+                <img src="data:image/png;base64,${imageB64}" alt="Generated Image" style="max-width: 100%; border-radius: 8px;" />
+                <p style="margin-top: 10px; color: green;">✅ Image generated successfully!</p>
+            `;
+            console.log('Image generated successfully (base64)');
+        } else if (imageUrl) {
             outputImg.innerHTML = `
                 <img src="${imageUrl}" alt="Generated Image" style="max-width: 100%; border-radius: 8px;" />
                 <p style="margin-top: 10px; color: green;">✅ Image generated successfully!</p>
             `;
             console.log('Image generated successfully:', imageUrl);
         } else {
-            throw new Error('No image URL found in response');
+            throw new Error('No image data found in response');
         }
 
     } catch (error) {
