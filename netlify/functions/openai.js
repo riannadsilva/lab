@@ -56,10 +56,10 @@ exports.handler = async function(event, context) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "dall-e-2",
+                model: "gpt-image-1",
                 prompt: prompt.trim(),
                 n: 1,
-                size: "256x256"
+                size: "1024x1024"
             })
         });
 
