@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>AI Image Generator</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Image Generator</h1>
-        <div id="output-img" class="frame">
-            <h2>Describe an image you want to see AI generate</h2>
-        </div>
-        <textarea placeholder="A woman in the office..." id="instruction"></textarea>
-        <button id="submit-btn">Create</button>
-        <script src="script.js"></script>
-    </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Image Generator</title>
+<link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="nav">
+    <nav class="nav-links">
+      <a href="/#home">Home</a>
+      <a href="/experiments.html">Experiments</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="generator-section">
+    <span class="tag-label">Experiment</span>
+    <h1 class="generator-title">Image Generator</h1>
+    <p class="generator-sub">Describe an image and let AI generate it.</p>
+
+    <div id="output-img" class="frame">
+      <h2>Your image will appear here</h2>
+    </div>
+
+    <textarea placeholder="A woman in the office..." id="instruction"></textarea>
+    <button id="submit-btn">Create</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
 </html>
