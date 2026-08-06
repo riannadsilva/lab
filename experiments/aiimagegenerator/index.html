@@ -20,15 +20,19 @@
   </header>
 
   <section class="generator-section">
-    <h1 class="generator-title">Image Generator</h1>
-    <p class="generator-sub">Describe an image and let AI generate it.</p>
-
-    <div id="output-img" class="frame">
-      <h2>Your image will appear here</h2>
+    <div class="generator-header">
+      <h1 class="generator-title">Image Generator</h1>
+      <p class="generator-sub">Describe an image and let AI generate it.</p>
     </div>
 
-    <textarea placeholder="A woman in the office..." id="instruction"></textarea>
-    <button id="submit-btn">Create</button>
+    <div class="generator-content">
+      <div id="output-img" class="frame">
+        <h2>Your image will appear here</h2>
+      </div>
+
+      <textarea placeholder="A woman in the office..." id="instruction"></textarea>
+      <button id="submit-btn">Create</button>
+    </div>
   </section>
 
   <script src="script.js"></script>
